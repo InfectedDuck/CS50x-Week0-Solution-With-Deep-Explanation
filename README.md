@@ -105,7 +105,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 
 ## Explanation of the code
 <div style="position: relative; display: inline-block;">
-  <img src="images/broadcast events.png" alt="Broadcast Events">
+  <img src="images/broadcast_events.png" alt="Broadcast Events">
   <div style="position: absolute; top: 0; right: 0; background: rgba(255, 255, 255, 0.7); padding: 5px;">
     This image shows how broadcast events are set up in the game.
   </div>
