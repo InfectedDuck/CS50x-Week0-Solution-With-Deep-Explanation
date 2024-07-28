@@ -253,3 +253,51 @@ This image shows a custom function called "rocks" that manages the behavior of r
     - **Purpose:** To reward the player for successful interactions with the buttons, providing a sense of achievement and progress.
 
 This function ensures that rocks in the game have dynamic interactions with the screen edges and buttons, providing both visual and auditory feedback while also contributing to the game's scoring system.
+
+<table>
+  <tr>
+    <td><img src="path/to/your/image.png" alt="Sound Events"></td>
+    <td>
+      <ol>
+        <li><strong>Event: "Congratulations, you won!"</strong>
+          <ul>
+            <li><strong>Actions:</strong> Stops all current sounds. Plays the "Dubstep" sound until it is completed.</li>
+            <li><strong>Purpose:</strong> To provide a celebratory audio cue when the player wins the game.</li>
+          </ul>
+        </li>
+        <li>Event: "Game Over"
+          <ul>
+            <li>Actions:
+              <ul>
+                <li>Stops all current sounds.</li>
+                <li>Plays the "Cave" sound until it is completed.</li>
+              </ul>
+            </li>
+            <li>Purpose: To signal to the player that the game has ended with a distinct sound.</li>
+          </ul>
+        </li>
+        <li>Event: "SECOND PHASE"
+          <ul>
+            <li>Actions:
+              <ul>
+                <li>Plays the "Alert" sound until it is completed.</li>
+                <li>Plays the "Alien Creak1" sound until it is completed.</li>
+              </ul>
+            </li>
+            <li>Purpose: To indicate the start of a new phase in the game with a combination of alerting and eerie sounds.</li>
+          </ul>
+        </li>
+        <li>Event: When the green flag is clicked
+          <ul>
+            <li>Actions:
+              <ul>
+                <li>Repeatedly plays the "Space Ambience" sound.</li>
+              </ul>
+            </li>
+            <li>Purpose: To provide continuous background ambiance, immersing the player in a space-themed environment throughout the game. The syntax is simple, when the signal about event is gone, other actions will be played. Something like If condition is met, do this. And songs will start playing. Forever loop means, it will always launch the music another time, when it meets it's end.</li>
+          </ul>
+        </li>
+      </ol>
+    </td>
+  </tr>
+</table>
