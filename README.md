@@ -256,7 +256,7 @@ This function ensures that rocks in the game have dynamic interactions with the 
 
 <table>
   <tr>
-    <td><img src="images/broadcast_events.png" alt="Sound Events" width="auto" height="auto"></td>
+    <td><img src="images/broadcast_events.png" alt="Sound Events" width="300" height="600"></td>
     <td>
       <ol>
         <li><strong>Event: "Congratulations, you won!"</strong>
