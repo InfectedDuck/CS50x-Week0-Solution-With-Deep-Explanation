@@ -104,9 +104,11 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 - **Movement:** The enemy spaceship steadily moves towards the player’s spaceship, forcing the player to evade it while still avoiding obstacles.
 
 ## Explanation of the code
-<div style="display: flex; align-items: center; margin-bottom: 10px;">
-  <img src="images/broadcast_events.png" alt="Broadcast Events" style="margin-right: 10px;">
-  <span>Broadcast events functionality description.</span>
+<div style="position: relative; display: inline-block;">
+  <img src="images/broadcast events.png" alt="Broadcast Events">
+  <div style="position: absolute; top: 0; right: 0; background: rgba(255, 255, 255, 0.7); padding: 5px;">
+    This image shows how broadcast events are set up in the game.
+  </div>
 </div>
 
 
