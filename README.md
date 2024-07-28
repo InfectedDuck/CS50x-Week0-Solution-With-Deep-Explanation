@@ -105,4 +105,39 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 
 ## Explanation of Broadcast Events
 <img align="left" width="200" src="images/broadcast_events.png" />
-bimbimbambam
+1. **Event: "Congratulations, you won!"**
+    - **Actions:**
+        - Stops all current sounds.
+        - Plays the "Dubstep" sound until it is completed.
+    - **Purpose:** To provide a celebratory audio cue when the player wins the game.
+
+2. **Event: "Game Over"**
+    - **Actions:**
+        - Stops all current sounds.
+        - Plays the "Cave" sound until it is completed.
+    - **Purpose:** To signal to the player that the game has ended with a distinct sound.
+
+3. **Event: "SECOND PHASE"**
+    - **Actions:**
+        - Plays the "Alert" sound until it is completed.
+        - Plays the "Alien Creak1" sound until it is completed.
+    - **Purpose:** To indicate the start of a new phase in the game with a combination of alerting and eerie sounds.
+
+4. **Event: When the green flag is clicked**
+    - **Actions:**
+        - Repeatedly plays the "Space Ambience" sound.
+    - **Purpose:** To provide continuous background ambiance, immersing the player in a space-themed environment throughout the game.
+The syntax is simple, when the sygnal about event will gone, other actions will be played. Something like If condition is met, do this. And songs will start playing. Forever loop means, it will always launch the music another time, when it meets it's end.
+<img align="left" width="200" src="images/broadcast_events.png" />
+This image shows the setup process for initializing the enemy spaceship in the game. The blocks are designed to position the spaceship correctly and hide it at the start of the game. Here's what each block does:
+      1. **Event: When the green flag is clicked**
+          - **Purpose:** This block is triggered when the game starts (or is restarted). It ensures that the following actions happen right at the beginning of the game.
+
+      2. **Block: Go to x: 180 y: 150**
+          - **Action:** This block moves the enemy spaceship to a specific position on the screen, with coordinates (180, 150). 
+          - **Purpose:** Setting the initial position of the spaceship so that it starts from a predefined location, ensuring consistent gameplay each time the game begins.
+
+      3. **Block: Hide**
+          - **Action:** This block makes the enemy spaceship invisible.
+          - **Purpose:** Initially hiding the spaceship until it's needed in the game. This can be useful for setting up the game environment without showing all elements right away, creating a more controlled and engaging experience for the player.
+      Together, these blocks ensure that the enemy spaceship is placed correctly and hidden when the game starts, ready to be revealed at the appropriate moment in the gameplay.
