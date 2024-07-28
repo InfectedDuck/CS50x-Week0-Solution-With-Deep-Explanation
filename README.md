@@ -105,7 +105,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 
 ## Explanation of the code
 
-### Receiving events
+### Sound, end-game events
 <table>
   <tr>
     <td><img src="images/broadcast_events.png" alt="Sound Events" width="1500" height="600"></td>
@@ -155,7 +155,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Enemy Spaceship basic
+### Enemy Spaceship Base
 <table>
   <tr>
     <td><img src="images/enemy_spaceship_base.png" alt="Enemy Spaceship Base" width="700" height="300""></td>
@@ -185,7 +185,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Enemy Spaceship movements
+### Enemy Spaceship Movements
 <table>
   <tr>
     <td><img src="images/enemy_spaceship_movements.png" alt="Enemy Spaceship Movements" width="800" height="300"></td>
@@ -233,7 +233,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Letters appearance 
+### Letters Visibility 
 <table>
   <tr>
     <td><img src="images/letters_base.png" alt="Letters Visibility" width="1200" height="200"></td>
@@ -268,7 +268,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Spaceship movements
+### Spaceship Movements
 <table>
   <tr>
     <td><img src="images/move_spaceship.png" alt="Spaceship Movement" width="1000" height="500"></td>
@@ -337,10 +337,10 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-
+### Rocks Function
 <table>
   <tr>
-    <td><img src="images/rocks_function.png" alt="Rocks Function" width="1600" height="500"></td>
+    <td><img src="images/rocks_function.png" alt="Rocks Function" width="1800" height="500"></td>
     <td>
       <p>This image shows a custom function called "rocks" that manages the behavior of rocks in the game. This function handles their movement, interactions with the edges of the screen, and interactions with buttons. Here's a breakdown of what each part does:</p>
       <ol>
@@ -401,10 +401,10 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-###Spawning bullets
+### Shooting Mechanism
 <table>
   <tr>
-    <td><img src="images/spawning_bullets.png" alt="Shooting Mechanism" width="700" height="1300"></td>
+    <td><img src="images/spawning_bullets.png" alt="Shooting Mechanism" width="1700" height="700"></td>
     <td>
       <h3>Shooting Mechanism Code Explanation</h3>
       <p>This code block manages the shooting mechanism for a sprite in a game. It defines the behavior when the green flag is clicked and continuously monitors for the space key to be pressed, triggering the shooting action.</p>
@@ -447,10 +447,10 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Implementing bullets movement, scores target
+### Bullet Clone Initialization Code
 <table>
   <tr>
-    <td><img src="/mnt/data/start_as_clone.png" alt="Clone Initialization Code" width="1100" height="600"></td>
+    <td><img src="images/start_as_clone.png" alt="Clone Initialization Code" width="1400" height="600"></td>
     <td>
       <h3>Clone Initialization Code Explanation</h3>
       <p>This code block defines the behavior for a sprite when it starts as a clone. It manages the movement, interactions, and events triggered by the clone during the game.</p>
@@ -487,10 +487,11 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
     </td>
   </tr>
 </table>
-### Implementing rocks movement
+
+### Rock Clones Behaviour
 <table>
   <tr>
-    <td><img src="images/start_as_clone_for_rock.png" alt="Clone Behavior Code" width="1200" height="300"></td>
+    <td><img src="images/start_as_clone_for_rock.png" alt="Clone Behavior Code" width="1200" height="400"></td>
     <td>
       <h3>Clone Behavior Code Explanation</h3>
       <p>This code block defines the behavior for a sprite when it starts as a clone. It manages the movement and interactions of the clone in the game.</p>
@@ -512,10 +513,10 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-###Implementing rock size, number details
+### Game start
 <table>
   <tr>
-    <td><img src="images/start_of_the_game_for_rocks.png" alt="Game Start Code" width="900" height="600"></td>
+    <td><img src="images/start_of_the_game_for_rocks.png" alt="Game Start Code" width="900" height="400"></td>
     <td>
       <h3>Game Start Code Explanation</h3>
       <p>This code block defines the actions that occur when the green flag is clicked, typically indicating the start of the game.</p>
@@ -539,10 +540,10 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Super bullet appearance
+### Super Bullet Base
 <table>
   <tr>
-    <td><img src="images/super_bullet_base.png" alt="Super Bullet Base Code" height="300" width="200"></td>
+    <td><img src="images/super_bullet_base.png" alt="Super Bullet Base Code" height="200" width="200"></td>
     <td>
       <h3>Super Bullet Base Code Explanation</h3>
       <p>This code block defines the behavior of a sprite, likely a bullet, that follows another sprite continuously.</p>
@@ -562,10 +563,10 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Super bullet movement
+### Super Bullet Movement
 <table>
   <tr>
-    <td><img src="images/super_bullet_movement.png" alt="Super Bullet Movement Code" height="700" width="300"></td>
+    <td><img src="images/super_bullet_movement.png" alt="Super Bullet Movement Code" height="300" width="500"></td>
     <td>
       <h3>Super Bullet Movement Code Explanation</h3>
       <p>This code block defines the behavior of a cloned sprite, likely a bullet, that moves vertically until it touches the edge of the screen.</p>
