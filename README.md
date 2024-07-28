@@ -271,7 +271,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Spaceship movements
 <table>
   <tr>
-    <td><img src="images/move_spaceship.png" alt="Spaceship Movement" width="1200" height="500"></td>
+    <td><img src="images/move_spaceship.png" alt="Spaceship Movement" width="1000" height="500"></td>
     <td>
       <p>This image shows a script that allows the player to control the movement of a spaceship using the keyboard. Each block checks for a specific key press and moves the spaceship accordingly. Here's how it works:</p>
       <ol>
@@ -340,7 +340,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 
 <table>
   <tr>
-    <td><img src="images/rocks_function.png" alt="Rocks Function" width="2000" height="500"></td>
+    <td><img src="images/rocks_function.png" alt="Rocks Function" width="1600" height="500"></td>
     <td>
       <p>This image shows a custom function called "rocks" that manages the behavior of rocks in the game. This function handles their movement, interactions with the edges of the screen, and interactions with buttons. Here's a breakdown of what each part does:</p>
       <ol>
@@ -397,6 +397,191 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
         </li>
       </ol>
       <p>This function ensures that rocks in the game have dynamic interactions with the screen edges and buttons, providing both visual and auditory feedback while also contributing to the game's scoring system.</p>
+    </td>
+  </tr>
+</table>
+
+###Spawning bullets
+<table>
+  <tr>
+    <td><img src="images/spawning_bullets.png" alt="Shooting Mechanism" width="700" height="1300"></td>
+    <td>
+      <h3>Shooting Mechanism Code Explanation</h3>
+      <p>This code block manages the shooting mechanism for a sprite in a game. It defines the behavior when the green flag is clicked and continuously monitors for the space key to be pressed, triggering the shooting action.</p>
+      <ul>
+        <li><strong>When the green flag is clicked:</strong>
+          <ul>
+            <li><strong>Forever loop:</strong>
+              <ul>
+                <li><strong>hide:</strong> Initially hides the sprite to manage its visibility during gameplay.</li>
+                <li><strong>go to Sprite1:</strong> Positions the sprite at the location of Sprite1.</li>
+                <li><strong>change y by 5:</strong> Moves the sprite upward by 5 units.</li>
+                <li><strong>If the space key is pressed:</strong>
+                  <ul>
+                    <li><strong>wait 0.1 seconds:</strong> Introduces a brief delay between shots.</li>
+                    <li><strong>repeat 1:</strong> Repeats the following actions once:
+                      <ul>
+                        <li><strong>create clone of myself:</strong> Creates a clone of the current sprite.</li>
+                        <li><strong>play sound "Laser2" until done:</strong> Plays the "Laser2" sound effect to simulate shooting.</li>
+                      </ul>
+                    </li>
+                    <li><strong>change "firesuntilmegafire" by -1:</strong> Decrements the counter for shots until the mega fire mode is triggered.</li>
+                    <li><strong>If "firesuntilmegafire" equals 0:</strong> Checks if the counter has reached zero.
+                      <ul>
+                        <li><strong>repeat 1:</strong> Repeats the following actions once:
+                          <ul>
+                            <li><strong>create clone of Button3:</strong> Creates a clone of Button3, possibly for a special shooting action or power-up.</li>
+                            <li><strong>set "firesuntilmegafire" to 10:</strong> Resets the counter to 10 for the next cycle of shots.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### Implementing bullets movement, scores target
+<table>
+  <tr>
+    <td><img src="/mnt/data/start_as_clone.png" alt="Clone Initialization Code" width="1100" height="600"></td>
+    <td>
+      <h3>Clone Initialization Code Explanation</h3>
+      <p>This code block defines the behavior for a sprite when it starts as a clone. It manages the movement, interactions, and events triggered by the clone during the game.</p>
+      <ul>
+        <li><strong>When I start as a clone:</strong>
+          <ul>
+            <li><strong>show:</strong> Makes the clone visible.</li>
+            <li><strong>go to x: (pick random -220 to 220) y: 150:</strong> Positions the clone at a random x-coordinate within the range -220 to 220 and at y-coordinate 150.</li>
+            <li><strong>repeat until touching Sprite1:</strong>
+              <ul>
+                <li>Continuously moves the clone downward until it touches Sprite1.</li>
+                <li><strong>set speeeeeeed to (pick random -1 to -10):</strong> Sets the speed of the clone to a random value between -1 and -10.</li>
+                <li><strong>change y by speeeeeeed:</strong> Moves the clone downward by the set speed value.</li>
+              </ul>
+            </li>
+            <li><strong>rocks:</strong> Executes the custom "rocks" function, which defines additional behaviors (not fully shown in this block).</li>
+            <li><strong>If score = 50 then:</strong> Checks if the score is equal to 50.
+              <ul>
+                <li><strong>switch backdrop to Galaxy:</strong> Changes the backdrop to "Galaxy".</li>
+                <li><strong>broadcast SECOND PHASE:</strong> Sends a broadcast message to initiate the second phase of the game.</li>
+              </ul>
+            </li>
+            <li><strong>If score > 150 then:</strong> Checks if the score is greater than 150.
+              <ul>
+                <li><strong>broadcast Congratulatins, you won!:</strong> Sends a broadcast message indicating that the player has won the game.</li>
+                <li><strong>stop all:</strong> Stops all scripts, effectively ending the game.</li>
+              </ul>
+            </li>
+            <li><strong>broadcast Game Over:</strong> Sends a broadcast message indicating that the game is over.</li>
+            <li><strong>stop all:</strong> Stops all scripts, effectively ending the game.</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+### Implementing rocks movement
+<table>
+  <tr>
+    <td><img src="images/start_as_clone_for_rock.png" alt="Clone Behavior Code" width="1200" height="300"></td>
+    <td>
+      <h3>Clone Behavior Code Explanation</h3>
+      <p>This code block defines the behavior for a sprite when it starts as a clone. It manages the movement and interactions of the clone in the game.</p>
+      <ul>
+        <li><strong>When I start as a clone:</strong>
+          <ul>
+            <li><strong>show:</strong> Makes the clone visible.</li>
+            <li><strong>repeat until touching edge or touching Rocks:</strong>
+              <ul>
+                <li>The clone keeps moving downward until it touches the edge of the screen or another sprite named "Rocks".</li>
+                <li><strong>change y by 5:</strong> Moves the clone downward by 5 units continuously.</li>
+              </ul>
+            </li>
+            <li><strong>hide:</strong> Hides the clone once the repeat condition is met.</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+###Implementing rock size, number details
+<table>
+  <tr>
+    <td><img src="images/start_of_the_game_for_rocks.png" alt="Game Start Code" width="900" height="600"></td>
+    <td>
+      <h3>Game Start Code Explanation</h3>
+      <p>This code block defines the actions that occur when the green flag is clicked, typically indicating the start of the game.</p>
+      <ul>
+        <li><strong>When green flag clicked:</strong>
+          <ul>
+            <li><strong>play sound Space Ripple until done:</strong> Plays the "Space Ripple" sound effect completely before moving to the next block.</li>
+            <li><strong>switch backdrop to Stars:</strong> Changes the background of the stage to "Stars".</li>
+            <li><strong>hide:</strong> Hides the sprite executing this script.</li>
+            <li><strong>set score to 0:</strong> Initializes the score to 0 at the start of the game.</li>
+            <li><strong>repeat 7:</strong> Repeats the enclosed actions 7 times.
+              <ul>
+                <li><strong>set size to pick random 30 to 60 %:</strong> Randomly sets the size of the sprite to a value between 30% and 60%.</li>
+                <li><strong>create clone of myself:</strong> Creates a clone of the sprite executing this script.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### Super bullet appearance
+<table>
+  <tr>
+    <td><img src="images/super_bullet_base.png" alt="Super Bullet Base Code" height="300" width="200"></td>
+    <td>
+      <h3>Super Bullet Base Code Explanation</h3>
+      <p>This code block defines the behavior of a sprite, likely a bullet, that follows another sprite continuously.</p>
+      <ul>
+        <li><strong>When green flag clicked:</strong>
+          <ul>
+            <li><strong>hide:</strong> Hides the sprite executing this script to start.</li>
+            <li><strong>forever:</strong> Repeats the enclosed actions indefinitely.
+              <ul>
+                <li><strong>go to Sprite1:</strong> Continuously moves the sprite to the location of "Sprite1".</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### Super bullet movement
+<table>
+  <tr>
+    <td><img src="images/super_bullet_movement.png" alt="Super Bullet Movement Code" height="700" width="300"></td>
+    <td>
+      <h3>Super Bullet Movement Code Explanation</h3>
+      <p>This code block defines the behavior of a cloned sprite, likely a bullet, that moves vertically until it touches the edge of the screen.</p>
+      <ul>
+        <li><strong>When I start as a clone:</strong>
+          <ul>
+            <li><strong>show:</strong> Makes the cloned sprite visible.</li>
+            <li><strong>repeat until touching edge:</strong> Repeats the enclosed actions until the sprite touches the edge of the screen.
+              <ul>
+                <li><strong>change y by 15:</strong> Moves the sprite upward by 15 units each iteration.</li>
+              </ul>
+            </li>
+            <li><strong>hide:</strong> Hides the sprite once it touches the edge of the screen.</li>
+          </ul>
+        </li>
+      </ul>
     </td>
   </tr>
 </table>
