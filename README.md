@@ -63,5 +63,48 @@ To play Space Adventures, follow these steps:
 - **Phase 1:** The game starts with the player controlling the spaceship and avoiding rocks that appear randomly. The main objective is to survive and collect points by destroying obstacles.
 - **Phase 2:** After a certain score threshold is reached, the game transitions to the second phase. In this phase, the enemy spaceship appears and starts gliding towards the player's spaceship. The player must continue avoiding rocks while also evading the enemy spaceship, increasing the difficulty of the game.
 
+## Technical Details
+
+### Techniques Used
+- **Event-Driven Programming:** The game heavily relies on event-driven programming, using Scratch's broadcasting and event listening features to manage game states and transitions.
+- **Randomization:** Random functions are used to generate obstacles at random positions and with random sizes to ensure the game remains unpredictable and challenging.
+- **Collision Detection:** Scratch's built-in collision detection is used to manage interactions between the spaceship, bullets, and obstacles.
+- **State Management:** Variables are used to keep track of game states such as score, game phase, and bullet count.
+- **Message Broadcasting:** Scratch's message broadcasting system is used to trigger changes between game phases and to handle the appearance of messages like "Game Over" and "You Won".
+
+### Implementation of Mechanics
+
+#### Spaceship Movement
+The spaceship is controlled using the arrow keys. The scripts attached to the spaceship sprite listen for key press events and move the spaceship accordingly:
+- **Up Arrow:** Moves the spaceship up.
+- **Down Arrow:** Moves the spaceship down.
+- **Left Arrow:** Moves the spaceship left.
+- **Right Arrow:** Moves the spaceship right.
+
+#### Shooting Bullets
+The player can shoot bullets by pressing the spacebar. Each time the spacebar is pressed, a bullet sprite (`Button1`) is cloned and set to move forward from the spaceship's position:
+- **Bullet Creation:** A new clone of the `Button1` sprite is created.
+- **Bullet Movement:** The cloned bullet moves forward until it collides with an obstacle or goes off-screen.
+- **Collision Handling:** When a bullet collides with an obstacle, both the bullet and the obstacle are destroyed, and the player earns points.
+
+#### Super Fire Mechanism
+Every 10 shots, a super fire is activated which destroys all obstacles in its path:
+- **Super Fire Activation:** A counter keeps track of the number of bullets fired. When it reaches 10, a super fire is triggered.
+- **Super Fire Behavior:** The super fire moves quickly across the screen, destroying any obstacles it touches.
+
+#### Obstacle Generation
+Obstacles (rocks) are generated at random intervals and positions:
+- **Random Positioning:** Obstacles appear at random positions on the right edge of the screen.
+- **Random Sizes:** Obstacles are assigned random sizes to add variety and difficulty.
+- **Movement:** Obstacles move leftward towards the spaceship, increasing the challenge for the player.
+
+#### Enemy Spaceship
+In the second phase of the game, an enemy spaceship appears and glides towards the player’s spaceship:
+- **Appearance Trigger:** The enemy spaceship appears once a certain score threshold is reached.
+- **Movement:** The enemy spaceship steadily moves towards the player’s spaceship, forcing the player to evade it while still avoiding obstacles.
+
+## Explanation of the code
+
+
 
 Each sprite is designed to contribute to the gameplay experience, creating an engaging and challenging environment for the player. The player's spaceship, enemy ships, and obstacles all interact according to the scripts defined in their respective blocks, making the game dynamic and enjoyable.
