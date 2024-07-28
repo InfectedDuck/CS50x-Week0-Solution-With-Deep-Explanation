@@ -33,7 +33,10 @@ To play Space Adventures, follow these steps:
 ## Project Structure
 
 ### Stage
-- **Role:** Manages the overall game environment, including backgrounds and game states. It also tracks the score and handles game start and end events.
+- **Role:** Manages the overall game environment, including backgrounds and game states. It also tracks the score and handles game start and end events. The stage controls the transitions between different phases of the game.
+- **Costumes:** The stage has different costumes to represent various backgrounds and game states. These may include:
+  - **Background 1:** The initial space background for the first phase of the game.
+  - **Background 2:** A different background or a more intense space scene for the second phase when the enemy spaceship appears.
 
 ### Sprite1 (Spaceship)
 - **Role:** The player's controllable spaceship. Handles movement using arrow keys and shooting projectiles to destroy obstacles. It is the primary element the player interacts with.
@@ -44,8 +47,14 @@ To play Space Adventures, follow these steps:
 ### Enemy Spaceship
 - **Role:** A special enemy that appears in the second phase of the game. It steadily moves towards the player's spaceship, adding an additional layer of challenge that the player must evade.
 
-### Block Series (e.g., Block1, Block2, Block3, etc.)
-- **Role:** These are various obstacles or elements that interact with the player. They may have different behaviors or effects on the game, such as moving in specific patterns or triggering events.
+### Letter Sprites
+- **Role:** Display messages indicating game status, such as win/loss, game over, or instructional text. These sprites are shown at various points during the game.
+- **Costumes:** Each letter sprite has a costume that displays a specific letter or message component. For example:
+  - **Y, O, U, W, O, N:** Sprites that spell out "YOU WON" when the winning condition is met.
+  - **G, A, M, E, O, V, E, R:** Sprites that spell out "GAME OVER" at the end of the game.
+ 
+### Button1 (Bullets)
+- **Role:** Represents the bullets fired by the player's spaceship. These bullets are used to destroy obstacles (rocks) and enemy spaceships. The `Button1` sprite handles the shooting mechanics, including bullet movement and collision detection.
 
 ### Super Fire
 - **Role:** A powerful shot that the player's spaceship can fire every 10 shots. It passes through and destroys all obstacles in its path, providing a temporary advantage.\
