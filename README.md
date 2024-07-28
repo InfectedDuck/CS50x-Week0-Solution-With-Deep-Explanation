@@ -104,7 +104,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 - **Movement:** The enemy spaceship steadily moves towards the player’s spaceship, forcing the player to evade it while still avoiding obstacles.
 
 ## Explanation of the code
-
+![Broadcast Events](images/broadcast_events.png)
 
 
 Each sprite is designed to contribute to the gameplay experience, creating an engaging and challenging environment for the player. The player's spaceship, enemy ships, and obstacles all interact according to the scripts defined in their respective blocks, making the game dynamic and enjoyable.
