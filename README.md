@@ -104,44 +104,5 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 - **Movement:** The enemy spaceship steadily moves towards the player’s spaceship, forcing the player to evade it while still avoiding obstacles.
 
 ## Explanation of Broadcast Events
-<div style="position: relative; display: inline-block;">
-  <img src="images/broadcast_events.png" alt="Broadcast Events" style="width: 300px;">
-  <div style="position: absolute; top: 0; right: 0; background: rgba(255, 255, 255, 0.7); padding: 5px;">
-    This image shows how broadcast events are set up in the game.
-  </div>
-</div>
-
-<table>
-  <tr>
-    <td><img src="images/broadcast_events.png" alt="Broadcast Events Setup" style="width: 300px;"></td>
-    <td>
-      <h2>Explanation of Broadcast Events in the Game</h2>
-      This image illustrates how broadcast events are utilized within the game to manage sound effects based on different game states. Each event triggers specific sounds to enhance the player's experience. Below is a detailed description of each event and its function:
-
-      1. **Event: "Congratulations, you won!"**
-          - **Actions:**
-              - Stops all current sounds.
-              - Plays the "Dubstep" sound until it is completed.
-          - **Purpose:** To provide a celebratory audio cue when the player wins the game.
-
-      2. **Event: "Game Over"**
-          - **Actions:**
-              - Stops all current sounds.
-              - Plays the "Cave" sound until it is completed.
-          - **Purpose:** To signal to the player that the game has ended with a distinct sound.
-
-      3. **Event: "SECOND PHASE"**
-          - **Actions:**
-              - Plays the "Alert" sound until it is completed.
-              - Plays the "Alien Creak1" sound until it is completed.
-          - **Purpose:** To indicate the start of a new phase in the game with a combination of alerting and eerie sounds.
-
-      4. **Event: When the green flag is clicked**
-          - **Actions:**
-              - Repeatedly plays the "Space Ambience" sound.
-          - **Purpose:** To provide continuous background ambiance, immersing the player in a space-themed environment throughout the game.
-
-      Each of these broadcast events is meticulously designed to contribute to the gameplay experience, creating an engaging and immersive atmosphere for the player.
-    </td>
-  </tr>
-</table>
+<img align="left" width="200" src="images/broadcast_events.png" />
+bimbimbambam
