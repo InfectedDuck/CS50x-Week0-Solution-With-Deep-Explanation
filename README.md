@@ -108,7 +108,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Receiving events
 <table>
   <tr>
-    <td><img src="images/broadcast_events.png" alt="Sound Events" width="900" height="600"></td>
+    <td><img src="images/broadcast_events.png" alt="Sound Events" width="1500" height="600"></td>
     <td>
       <ol>
         <li><strong>Event: "Congratulations, you won!"</strong>
@@ -158,7 +158,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Enemy Spaceship basic
 <table>
   <tr>
-    <td><img src="images/enemy_spaceship_base.png" alt="Enemy Spaceship Base" width="200"></td>
+    <td><img src="images/enemy_spaceship_base.png" alt="Enemy Spaceship Base" width="700" height="300""></td>
     <td>
       <p>This image shows the setup process for initializing the enemy spaceship in the game. The blocks are designed to position the spaceship correctly and hide it at the start of the game. Here's what each block does:</p>
       <ol>
@@ -188,7 +188,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Enemy Spaceship movements
 <table>
   <tr>
-    <td><img src="images/enemy_spaceship_movements.png" alt="Enemy Spaceship Movements" width="200"></td>
+    <td><img src="images/enemy_spaceship_movements.png" alt="Enemy Spaceship Movements" width="800" height="300"></td>
     <td>
       <p>This image shows how the enemy spaceship behaves during the second phase of the game. Each block in the script plays a crucial role in creating a dynamic and engaging challenge for the player. Here's what each part does:</p>
       <ol>
@@ -236,7 +236,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Letters appearance 
 <table>
   <tr>
-    <td><img src="images/letters_base.png" alt="Letters Visibility" width="200"></td>
+    <td><img src="images/letters_base.png" alt="Letters Visibility" width="1200" height="200"></td>
     <td>
       <p>This image shows two separate scripts that control the visibility of letters in the game, both when the game starts and when it ends. Here's what each block does:</p>
       <ol>
@@ -271,7 +271,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Spaceship movements
 <table>
   <tr>
-    <td><img src="images/move_spaceship.png" alt="Spaceship Movement" width="200"></td>
+    <td><img src="images/move_spaceship.png" alt="Spaceship Movement" width="1200" height="500"></td>
     <td>
       <p>This image shows a script that allows the player to control the movement of a spaceship using the keyboard. Each block checks for a specific key press and moves the spaceship accordingly. Here's how it works:</p>
       <ol>
@@ -340,7 +340,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 
 <table>
   <tr>
-    <td><img src="images/rocks_function.png" alt="Rocks Function" width="200"></td>
+    <td><img src="images/rocks_function.png" alt="Rocks Function" width="2000" height="500"></td>
     <td>
       <p>This image shows a custom function called "rocks" that manages the behavior of rocks in the game. This function handles their movement, interactions with the edges of the screen, and interactions with buttons. Here's a breakdown of what each part does:</p>
       <ol>
