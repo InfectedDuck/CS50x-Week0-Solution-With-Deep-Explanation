@@ -57,7 +57,7 @@ To play Space Adventures, follow these steps:
 - **Role:** Represents the bullets fired by the player's spaceship. These bullets are used to destroy obstacles (rocks) and enemy spaceships. The `Button1` sprite handles the shooting mechanics, including bullet movement and collision detection.
 
 ### Super Fire
-- **Role:** A powerful shot that the player's spaceship can fire every 10 shots. It passes through and destroys all obstacles in its path, providing a temporary advantage.\
+- **Role:** A powerful shot that the player's spaceship can fire every 10 shots. It passes through and destroys all obstacles in its path, providing a temporary advantage.
 
 ### Game Phases
 - **Phase 1:** The game starts with the player controlling the spaceship and avoiding rocks that appear randomly. The main objective is to survive and collect points by destroying obstacles.
@@ -409,32 +409,70 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
       <h3>Shooting Mechanism Code Explanation</h3>
       <p>This code block manages the shooting mechanism for a sprite in a game. It defines the behavior when the green flag is clicked and continuously monitors for the space key to be pressed, triggering the shooting action.</p>
       <ul>
-        <li><strong>When the green flag is clicked:</strong>
+        <li><strong>Event: When the green flag is clicked</strong>
           <ul>
-            <li><strong>Forever loop:</strong>
+            <li><strong>Block: Hide</strong>
               <ul>
                 <li><strong>Action:</strong> Initially hides the sprite to manage its visibility during gameplay.</li>
                 <li><strong>Purpose:</strong> Ensures the sprite is only visible when it should be active.</li>
-                <li><strong>Action:</strong> Positions the sprite at the location of Sprite1.</li>
-                <li><strong>Purpose:</strong> Aligns the shooting sprite with the main sprite for accurate shooting.</li>
-                <li><strong>Action:</strong> Moves the sprite upward by 5 units.</li>
-                <li><strong>Purpose:</strong> Simulates the upward movement of the bullet when fired.</li>
-                <li><strong>If the space key is pressed:</strong>
+              </ul>
+            </li>
+            <li><strong>Forever Loop</strong>
+              <ul>
+                <li><strong>Block: Go to Sprite1</strong>
                   <ul>
-                    <li><strong>Action:</strong> Introduces a brief delay between shots.</li>
-                    <li><strong>Purpose:</strong> Prevents continuous firing, simulating a realistic shooting rate.</li>
-                    <li><strong>Action:</strong> Creates a clone of the current sprite.</li>
-                    <li><strong>Purpose:</strong> Simulates firing a bullet by creating a clone of the sprite.</li>
-                    <li><strong>Action:</strong> Plays the "Laser2" sound effect to simulate shooting.</li>
-                    <li><strong>Purpose:</strong> Provides auditory feedback for the shooting action.</li>
-                    <li><strong>Action:</strong> Decrements the counter for shots until the mega fire mode is triggered.</li>
-                    <li><strong>Purpose:</strong> Tracks the number of shots fired to trigger a special action after a set number of shots.</li>
-                    <li><strong>Action:</strong> Checks if the counter has reached zero.</li>
-                    <li><strong>Purpose:</strong> Determines if the special mega fire action should be triggered.</li>
-                    <li><strong>Action:</strong> Creates a clone of Button3, possibly for a special shooting action or power-up.</li>
-                    <li><strong>Purpose:</strong> Activates a special power-up or action when the counter reaches zero.</li>
-                    <li><strong>Action:</strong> Resets the counter to 10 for the next cycle of shots.</li>
-                    <li><strong>Purpose:</strong> Prepares for the next cycle of tracking shots for the mega fire action.</li>
+                    <li><strong>Action:</strong> Positions the sprite at the location of Sprite1.</li>
+                    <li><strong>Purpose:</strong> Aligns the shooting sprite with the main sprite for accurate shooting.</li>
+                  </ul>
+                </li>
+                <li><strong>Block: Change y by 5</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Moves the sprite upward by 5 units.</li>
+                    <li><strong>Purpose:</strong> Simulates the upward movement of the bullet when fired.</li>
+                  </ul>
+                </li>
+                <li><strong>Condition: If key space pressed?</strong>
+                  <ul>
+                    <li><strong>Block: Wait 0.1 seconds</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Introduces a brief delay between shots.</li>
+                        <li><strong>Purpose:</strong> Prevents continuous firing, simulating a realistic shooting rate.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Block: Create clone of myself</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Creates a clone of the current sprite.</li>
+                        <li><strong>Purpose:</strong> Simulates firing a bullet by creating a clone of the sprite.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Block: Play sound Laser2</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Plays the "Laser2" sound effect to simulate shooting.</li>
+                        <li><strong>Purpose:</strong> Provides auditory feedback for the shooting action.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Block: Change firesuntilmegafire by -1</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Decrements the counter for shots until the mega fire mode is triggered.</li>
+                        <li><strong>Purpose:</strong> Tracks the number of shots fired to trigger a special action after a set number of shots.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Condition: If firesuntilmegafire = 0</strong>
+                      <ul>
+                        <li><strong>Block: Create clone of Button3</strong>
+                          <ul>
+                            <li><strong>Action:</strong> Creates a clone of Button3, possibly for a special shooting action or power-up.</li>
+                            <li><strong>Purpose:</strong> Activates a special power-up or action when the counter reaches zero.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Block: Set shots to 10</strong>
+                          <ul>
+                            <li><strong>Action:</strong> Resets the counter to 10 for the next cycle of shots.</li>
+                            <li><strong>Purpose:</strong> Prepares for the next cycle of tracking shots for the mega fire action.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -449,39 +487,98 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ### Bullet Clone Initialization Code
 <table>
   <tr>
-    <td><img src="images/start_as_clone.png" alt="Clone Initialization Code" width="1400" height="600"></td>
+    <td><img src="images/start_as_clone.png" alt="Clone Initialization Code" width="1600" height="600"></td>
     <td>
       <h3>Clone Initialization Code Explanation</h3>
       <p>This code block defines the behavior for a sprite when it starts as a clone. It manages the movement, interactions, and events triggered by the clone during the game.</p>
       <ul>
-        <li><strong>When I start as a clone:</strong>
+        <li><strong>Event: When I start as a clone</strong>
           <ul>
-            <li><strong>Action:</strong> Makes the clone visible.</li>
-            <li><strong>Purpose:</strong> Ensures the clone can be seen when it is active.</li>
-            <li><strong>Action:</strong> Positions the clone at a random x-coordinate within the range -220 to 220 and at y-coordinate 150.</li>
-            <li><strong>Purpose:</strong> Randomizes the initial position of the clone to add variety to its spawning.</li>
-            <li><strong>Action:</strong> Sets the speed of the clone to a random value between -1 and -10.</li>
-            <li><strong>Purpose:</strong> Adds variability to the speed of the clone, making the game more challenging.</li>
-            <li><strong>Action:</strong> Moves the clone downward by the set speed value.</li>
-            <li><strong>Purpose:</strong> Simulates the falling movement of the clone.</li>
-            <li><strong>Action:</strong> Executes the custom "rocks" function, which defines additional behaviors (not fully shown in this block).</li>
-            <li><strong>Purpose:</strong> Adds complex behaviors to the clone, defined in the "rocks" function.</li>
-            <li><strong>Action:</strong> Checks if the score is equal to 50.</li>
-            <li><strong>Purpose:</strong> Triggers a special event when the score reaches a certain value.</li>
-            <li><strong>Action:</strong> Changes the backdrop to "Galaxy".</li>
-            <li><strong>Purpose:</strong> Indicates a transition to a new phase of the game.</li>
-            <li><strong>Action:</strong> Sends a broadcast message to initiate the second phase of the game.</li>
-            <li><strong>Purpose:</strong> Coordinates the transition to the next phase with other sprites and scripts.</li>
-            <li><strong>Action:</strong> Checks if the score is greater than 150.</li>
-            <li><strong>Purpose:</strong> Determines if the game has been won based on the score.</li>
-            <li><strong>Action:</strong> Sends a broadcast message indicating that the player has won the game.</li>
-            <li><strong>Purpose:</strong> Provides feedback to the player for winning the game.</li>
-            <li><strong>Action:</strong> Stops all scripts, effectively ending the game.</li>
-            <li><strong>Purpose:</strong> Concludes the game when the winning condition is met.</li>
-            <li><strong>Action:</strong> Sends a broadcast message indicating that the game is over.</li>
-            <li><strong>Purpose:</strong> Provides feedback to the player that the game has ended.</li>
-            <li><strong>Action:</strong> Stops all scripts, effectively ending the game.</li>
-            <li><strong>Purpose:</strong> Ensures the game concludes properly when the game over condition is met.</li>
+            <li><strong>Block: Show</strong>
+              <ul>
+                <li><strong>Action:</strong> Makes the clone visible.</li>
+                <li><strong>Purpose:</strong> Ensures the clone can be seen when it is active.</li>
+              </ul>
+            </li>
+            <li><strong>Block: Go to x: (pick random -220 to 220) y: 150</strong>
+              <ul>
+                <li><strong>Action:</strong> Positions the clone at a random x-coordinate within the range -220 to 220 and at y-coordinate 150.</li>
+                <li><strong>Purpose:</strong> Randomizes the initial position of the clone to add variety to its spawning.</li>
+              </ul>
+            </li>
+            <li><strong>Block: Set speed to (pick random -1 to -10)</strong>
+              <ul>
+                <li><strong>Action:</strong> Sets the speed of the clone to a random value between -1 and -10.</li>
+                <li><strong>Purpose:</strong> Adds variability to the speed of the clone, making the game more challenging.</li>
+              </ul>
+            </li>
+            <li><strong>Loop: Repeat until touches sprite1</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Loop continues until rock will touch the spaceship.</li>
+                        <li><strong>Purpose:</strong> To set an action to avoid rocks.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Block: Broadcast game over</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Sends a broadcast message indicating that the game is over.</li>
+                        <li><strong>Purpose:</strong> Provides feedback to the player that the game has ended.</li>
+                      </ul>
+                    </li>
+              <ul>
+                <li><strong>Block: Change y by speed</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Moves the clone downward by the set speed value.</li>
+                    <li><strong>Purpose:</strong> Simulates the falling movement of the clone.</li>
+                  </ul>
+                </li>
+                <li><strong>Block: rocks</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Executes the custom "rocks" function, which defines additional behaviors (not fully shown in this block).</li>
+                    <li><strong>Purpose:</strong> Adds complex behaviors to the clone, defined in the "rocks" function.</li>
+                  </ul>
+                </li>
+                <li><strong>Condition: If score = 50</strong>
+                  <ul>
+                    <li><strong>Block: Switch backdrop to Galaxy</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Changes the backdrop to "Galaxy".</li>
+                        <li><strong>Purpose:</strong> Indicates a transition to a new phase of the game.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Block: Broadcast phase 2</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Sends a broadcast message to initiate the second phase of the game.</li>
+                        <li><strong>Purpose:</strong> Coordinates the transition to the next phase with other sprites and scripts.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>Condition: If score > 150</strong>
+                  <ul>
+                    <li><strong>Block: Broadcast you win</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Sends a broadcast message indicating that the player has won the game.</li>
+                        <li><strong>Purpose:</strong> Provides feedback to the player for winning the game.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Block: Stop all</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Stops all scripts, effectively ending the game.</li>
+                        <li><strong>Purpose:</strong> Concludes the game when the winning condition is met.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                    <li><strong>Block: Stop all</strong>
+                      <ul>
+                        <li><strong>Action:</strong> Stops all scripts, effectively ending the game.</li>
+                        <li><strong>Purpose:</strong> Ensures the game concludes properly when the game over condition is met.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -489,25 +586,37 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
   </tr>
 </table>
 
-### Rock Clones Behaviour
+### Rock Clones Behavior
 <table>
   <tr>
-    <td><img src="images/start_as_clone_for_rock.png" alt="Clone Behavior Code" width="1200" height="400"></td>
+    <td><img src="images/start_as_clone_for_rock.png" alt="Rock Clones Behavior" width="1200" height="400"></td>
     <td>
-      <h3>Clone Behavior Code Explanation</h3>
+      <h3>Rock Clones Behavior Code Explanation</h3>
       <p>This code block defines the behavior for a sprite when it starts as a clone. It manages the movement and interactions of the clone in the game.</p>
-      <ul>
-        <li><strong>When I start as a clone:</strong>
+      <ol>
+        <li><strong>Event: When I start as a clone</strong>
           <ul>
-            <li><strong>Action:</strong> Makes the clone visible.</li>
-            <li><strong>Purpose:</strong> Ensures the clone can be seen when it is active.</li>
-            <li><strong>Action:</strong> Moves the clone downward by 5 units continuously until it touches the edge of the screen or another sprite named "Rocks".</li>
-            <li><strong>Purpose:</strong> Simulates the falling movement of the clone, adding interaction with the game environment.</li>
-            <li><strong>Action:</strong> Hides the clone once the repeat condition is met.</li>
-            <li><strong>Purpose:</strong> Removes the clone from view once it has completed its movement or interaction.</li>
+            <li><strong>Block: show</strong>
+              <ul>
+                <li><strong>Action:</strong> Makes the clone visible.</li>
+                <li><strong>Purpose:</strong> Ensures the clone can be seen when it is active.</li>
+              </ul>
+            </li>
+            <li><strong>Block: repeat until touching edge or touching Rocks</strong>
+              <ul>
+                <li><strong>Action:</strong> Moves the clone downward by 5 units continuously until it touches the edge of the screen or another sprite named "Rocks".</li>
+                <li><strong>Purpose:</strong> Simulates the falling movement of the clone, adding interaction with the game environment.</li>
+              </ul>
+            </li>
+            <li><strong>Block: hide</strong>
+              <ul>
+                <li><strong>Action:</strong> Hides the clone once the repeat condition is met.</li>
+                <li><strong>Purpose:</strong> Removes the clone from view once it has completed its movement or interaction.</li>
+              </ul>
+            </li>
           </ul>
         </li>
-      </ul>
+      </ol>
     </td>
   </tr>
 </table>
@@ -519,31 +628,55 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
     <td>
       <h3>Game Start Code Explanation</h3>
       <p>This code block defines the actions that occur when the green flag is clicked, typically indicating the start of the game.</p>
-      <ul>
-        <li><strong>When green flag clicked:</strong>
+      <ol>
+        <li><strong>Event: When green flag clicked</strong>
           <ul>
-            <li><strong>Action:</strong> Plays the "Space Ripple" sound effect completely before moving to the next block.</li>
-            <li><strong>Purpose:</strong> Provides an auditory cue to signal the start of the game.</li>
-            <li><strong>Action:</strong> Changes the background of the stage to "Stars".</li>
-            <li><strong>Purpose:</strong> Sets the initial scene for the game environment.</li>
-            <li><strong>Action:</strong> Hides the sprite executing this script.</li>
-            <li><strong>Purpose:</strong> Ensures the sprite is not visible until it is needed.</li>
-            <li><strong>Action:</strong> Initializes the score to 0 at the start of the game.</li>
-            <li><strong>Purpose:</strong> Resets the game score for a new playthrough.</li>
-            <li><strong>Action:</strong> Shows the score variable on the stage.</li>
-            <li><strong>Purpose:</strong> Makes the score visible to the player during the game.</li>
-            <li><strong>Action:</strong> Hides the score text and arrow sprite.</li>
-            <li><strong>Purpose:</strong> Removes unnecessary elements from the screen at the start.</li>
-            <li><strong>Action:</strong> Repeats every 2 seconds:</li>
-            <li><strong>Action:</strong> Creates a clone of itself.</li>
-            <li><strong>Purpose:</strong> Continuously generates new clones to simulate ongoing action in the game.</li>
+            <li><strong>Block: play sound [Space Ripple] until done</strong>
+              <ul>
+                <li><strong>Action:</strong> Plays the "Space Ripple" sound effect completely before moving to the next block.</li>
+                <li><strong>Purpose:</strong> Provides an auditory cue to signal the start of the game.</li>
+              </ul>
+            </li>
+            <li><strong>Block: switch backdrop to [Stars]</strong>
+              <ul>
+                <li><strong>Action:</strong> Changes the background of the stage to "Stars".</li>
+                <li><strong>Purpose:</strong> Sets the initial scene for the game environment.</li>
+              </ul>
+            </li>
+            <li><strong>Block: hide</strong>
+              <ul>
+                <li><strong>Action:</strong> Hides the sprite executing this script.</li>
+                <li><strong>Purpose:</strong> Ensures the sprite is not visible until it is needed.</li>
+              </ul>
+            </li>
+            <li><strong>Block: set [score] to [0]</strong>
+              <ul>
+                <li><strong>Action:</strong> Initializes the score to 0 at the start of the game.</li>
+                <li><strong>Purpose:</strong> Resets the game score for a new playthrough.</li>
+              </ul>
+            </li>
+            <li><strong>Block: repeat [7]</strong>
+              <ul>
+                <li><strong>Block: set size to [pick random 30 to 60] %</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Randomly sets the size of the sprite to a value between 30% and 60%.</li>
+                    <li><strong>Purpose:</strong> Adds variety to the size of the clones, making the game more interesting.</li>
+                  </ul>
+                </li>
+                <li><strong>Block: create clone of [myself]</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Creates a clone of itself.</li>
+                    <li><strong>Purpose:</strong> Continuously generates new clones to simulate ongoing action in the game.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
-      </ul>
+      </ol>
     </td>
   </tr>
 </table>
-
 
 ### Super Bullet Base
 <table>
@@ -551,16 +684,24 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
     <td><img src="images/super_bullet_base.png" alt="Super Bullet Base Code" height="200" width="200"></td>
     <td>
       <h3>Super Bullet Base Code Explanation</h3>
-      <p>This code block defines the behavior of a sprite, likely a bullet, that follows another sprite continuously.</p>
+      <p>This code block defines the base behavior of the super bullet sprite, ensuring it follows another sprite continuously.</p>
       <ul>
-        <li><strong>When green flag clicked:</strong>
+        <li><strong>Event: When green flag clicked</strong>
           <ul>
-            <li><strong>Action:</strong> Hides the sprite executing this script to start.</li>
-            <li><strong>Purpose:</strong> Ensures the sprite is not visible until needed.</li>
-            <li><strong>Forever loop:</strong> Repeats the enclosed actions indefinitely.
+            <li><strong>Block: Hide</strong>
               <ul>
-                <li><strong>Action:</strong> Continuously moves the sprite to the location of "Sprite1".</li>
-                <li><strong>Purpose:</strong> Keeps the sprite aligned with "Sprite1" for accurate positioning.</li>
+                <li><strong>Action:</strong> Hides the sprite executing this script.</li>
+                <li><strong>Purpose:</strong> Ensures the sprite is not visible until needed.</li>
+              </ul>
+            </li>
+            <li><strong>Forever Loop</strong>
+              <ul>
+                <li><strong>Block: Go to (Sprite1)</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Continuously moves the sprite to the location of "Sprite1".</li>
+                    <li><strong>Purpose:</strong> Keeps the sprite aligned with "Sprite1" for accurate positioning.</li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>
@@ -578,22 +719,33 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
       <h3>Super Bullet Movement Code Explanation</h3>
       <p>This code block defines the behavior of a cloned sprite, likely a bullet, that moves vertically until it touches the edge of the screen.</p>
       <ul>
-        <li><strong>When I start as a clone:</strong>
+        <li><strong>Event: When I start as a clone</strong>
           <ul>
-            <li><strong>Action:</strong> Makes the cloned sprite visible.</li>
-            <li><strong>Purpose:</strong> Ensures the clone can be seen when active.</li>
-            <li><strong>Repeat until touching edge:</strong> Repeats the enclosed actions until the sprite touches the edge of the screen.
+            <li><strong>Block: Show</strong>
               <ul>
-                <li><strong>Action:</strong> Moves the sprite upward by 15 units each iteration.</li>
-                <li><strong>Purpose:</strong> Simulates the upward movement of the bullet.</li>
+                <li><strong>Action:</strong> Makes the cloned sprite visible.</li>
+                <li><strong>Purpose:</strong> Ensures the clone can be seen when active.</li>
               </ul>
             </li>
-            <li><strong>Action:</strong> Hides the sprite once it touches the edge of the screen.</li>
-            <li><strong>Purpose:</strong> Removes the sprite from view after it has completed its movement.</li>
+            <li><strong>Repeat Until Loop: Touching Edge</strong>
+              <ul>
+                <li><strong>Block: Change y by 15</strong>
+                  <ul>
+                    <li><strong>Action:</strong> Moves the sprite upward by 15 units each iteration.</li>
+                    <li><strong>Purpose:</strong> Simulates the upward movement of the bullet.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><strong>Block: Hide</strong>
+              <ul>
+                <li><strong>Action:</strong> Hides the sprite once it touches the edge of the screen.</li>
+                <li><strong>Purpose:</strong> Removes the sprite from view after it has completed its movement.</li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
     </td>
   </tr>
 </table>
-
