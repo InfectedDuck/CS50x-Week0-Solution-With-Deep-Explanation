@@ -103,19 +103,19 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 - **Appearance Trigger:** The enemy spaceship appears once a certain score threshold is reached.
 - **Movement:** The enemy spaceship steadily moves towards the player’s spaceship, forcing the player to evade it while still avoiding obstacles.
 
-## Explanation of the code
+## Explanation of Broadcast Events
 <div style="position: relative; display: inline-block;">
-  <img src="images/broadcast_events.png" alt="Broadcast Events">
+  <img src="images/broadcast_events.png" alt="Broadcast Events" style="width: 300px;">
   <div style="position: absolute; top: 0; right: 0; background: rgba(255, 255, 255, 0.7); padding: 5px;">
     This image shows how broadcast events are set up in the game.
   </div>
 </div>
+
 <table>
   <tr>
-    <td><img src="images/broadcast_events.png" alt="Broadcast Events Setup"></td>
+    <td><img src="images/broadcast_events.png" alt="Broadcast Events Setup" style="width: 300px;"></td>
     <td>
-      ## Explanation of Broadcast Events in the Game
-
+      <h2>Explanation of Broadcast Events in the Game</h2>
       This image illustrates how broadcast events are utilized within the game to manage sound effects based on different game states. Each event triggers specific sounds to enhance the player's experience. Below is a detailed description of each event and its function:
 
       1. **Event: "Congratulations, you won!"**
@@ -145,6 +145,3 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
     </td>
   </tr>
 </table>
-
-
-Each sprite is designed to contribute to the gameplay experience, creating an engaging and challenging environment for the player. The player's spaceship, enemy ships, and obstacles all interact according to the scripts defined in their respective blocks, making the game dynamic and enjoyable.
