@@ -753,7 +753,7 @@ In the second phase of the game, an enemy spaceship appears and glides towards t
 ## Credits
 <table>
   <tr>
-    <td><img src="images/CS50x_logo.png" alt="CS50 Logo" width="530" height="298"></td>
+    <td><img src="images/CS50x_logo.png" alt="CS50 Logo" width="530" height="300"></td>
     <td>
       <h3>Credits to CS50x</h3>
       <p>This project was inspired by and developed as part of the CS50x course offered by Harvard University. CS50x is an introduction to the intellectual enterprises of computer science and the art of programming.</p>
